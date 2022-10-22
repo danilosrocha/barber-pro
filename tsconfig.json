@@ -22,5 +22,8 @@
   },
   "include": [
     "src"
+, "App.tsx", "App.tsx"  ],
+  "files": [
+    "src/styles/styled.d.ts"
   ]
 }
