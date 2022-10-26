@@ -1,12 +1,19 @@
 export default {
-    title: 'light',
+  title: 'light',
 
-    colors: {
-        primary: '#040404',
-        secundary: '#fba931',
+  colors: {
+    primary: '#fba931',
 
-        background: '#f5f5f5',
-        text: '#f5f5f5'
+    button: {
+      primary: '#fba931',
+      default: '#dfdfdf',
+      gray: '#dfdfdf',
+      danger: '#ff4040',
     },
 
+    background: '#f5f5f5',
+    inverseBackground: '#12131b',
+    inputBackground: '#dfdfdf',
+    text: '#12131b',
+  },
 };
