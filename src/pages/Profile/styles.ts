@@ -2,14 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   display: flex;
-  height: 100vh;
   flex: 1;
   background: ${(props) => props.theme.colors.background};
 `;
 
 export const View = styled.div`
   width: 640px;
-  background-color: red;
   flex: 1;
   display: flex;
   align-items: center;

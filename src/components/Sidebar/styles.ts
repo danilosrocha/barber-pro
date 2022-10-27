@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
-  display: flex;
+export const Container = styled.div`
   height: 100vh;
-  justify-content: center;
-  background: ${(props) => props.theme.colors.primary};
+  width: 20vh;
+  background: ${(props) => props.theme.colors.button.default};
 `;
 
 export const ViewSidebar = styled.div`
@@ -21,13 +20,14 @@ export const ViewSidebarLogo = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
 `;
 
 export const ViewNavItem = styled.div`
   padding: 10px;
   height: 40px;
+  width: 100%;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -80,4 +80,9 @@ export const Button = styled.button`
   margin-bottom: 10px;
 `;
 
-export const Link = styled.a``;
+export const Link = styled.a`
+  text-decoration: none;
+  display: flex;
+  /* background-color: red; */
+  align-items: center;
+`;

@@ -19,7 +19,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header toggleTheme={toggleTheme} />
+      {/* <Header toggleTheme={toggleTheme} /> */}
       <RoutesApp />
     </ThemeProvider>
   );

@@ -8,11 +8,10 @@ import {
   useDisclosure,
   BoxProps,
   FlexProps,
-  Link,
 } from '@chakra-ui/react';
 
-import { Container, ViewSidebar, ViewSidebarLogo, ViewNavItem, Text, Title, Icon } from './styles';
-import { FiScissors, FiClipboard, FiSettings, FiMenu } from 'react-icons/fi';
+import { Container, ViewSidebar, ViewSidebarLogo, ViewNavItem, Text, Title, Icon, Link } from './styles';
+import { FiScissors, FiClipboard, FiSettings, FiMenu, FiLogOut } from 'react-icons/fi';
 import { IconType } from 'react-icons';
 
 interface LinkItemProps {
@@ -25,11 +24,11 @@ const LinkItems: Array<LinkItemProps> = [
   { name: 'Agenda', icon: FiScissors, route: '/dashboard' },
   { name: 'Cortes', icon: FiClipboard, route: '/haircuts' },
   { name: 'Minha Conta', icon: FiSettings, route: '/profile' },
-  { name: 'Logout', icon: FiMenu, route: '/login' },
+  { name: 'Logout', icon: FiLogOut, route: '/login' },
 ];
 
 export function Sidebar({ children }: { children: ReactNode }) {
-  const { isOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Container>
@@ -38,13 +37,21 @@ export function Sidebar({ children }: { children: ReactNode }) {
         display={{ base: 'none', md: 'block' }}
       />
 
-      <Drawer autoFocus={false} isOpen={isOpen} onClose={onClose}>
+      <Drawer
+        autoFocus={false}
+        isOpen={isOpen}
+        placement='left'
+        returnFocusOnClose={false}
+        onOverlayClick={onClose}
+        size="full"
+        onClose={onClose}
+      >
         <DrawerContent>
           <SidebarContent onClose={() => onClose} />
         </DrawerContent>
       </Drawer>
 
-      <Box>{children}</Box>
+      <Box ml={{ base: 0, md: 60 }}>{children}</Box>
     </Container>
   );
 }
@@ -59,7 +66,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       <ViewSidebarLogo>
         <Link href="/dashboard">
           <Flex cursor="pointer" userSelect="none" flexDirection="row">
-            <Title fontSize="21" fontWeight="bold">
+            <Title>
               Barber
             </Title>
             <Title>
@@ -67,12 +74,12 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             </Title>
           </Flex>
         </Link>
-        <CloseButton
+        {/* <CloseButton
           borderRadius="5"
           cursor="pointer"
           display={{ base: 'flex', md: 'none' }}
           onClick={onClose}
-        />
+        /> */}
       </ViewSidebarLogo>
 
       {LinkItems.map((link) => (
@@ -95,7 +102,7 @@ interface NavItemProps extends FlexProps {
 
 const NavItem = ({ icon, children, route, ...rest }: NavItemProps) => {
   return (
-    <Link href={route} style={{ textDecoration: 'none' }}>
+    <Link href={route}>
       <ViewNavItem>
         {icon && (
           <Icon as={icon} />

@@ -20,6 +20,8 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
         height={10}
         width={40}
         handleDiameter={20}
+        onColor="#ffff"
+        offColor="#1b1c29"
       />
     </Container>
   );
