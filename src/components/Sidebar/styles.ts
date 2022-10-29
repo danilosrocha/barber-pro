@@ -2,13 +2,17 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 100vh;
-  width: 20vh;
+  max-width: 220px;
   background: ${(props) => props.theme.colors.button.default};
+  @media screen and (max-width: 575px) {
+    max-width: 100%;
+  }
 `;
 
 export const ViewSidebar = styled.div`
   width: 20vh;
   padding: 10px;
+  
   align-items: center;
   justify-content: center;
   flex-direction: column;

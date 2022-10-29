@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 
 import { Container, ViewSidebar, ViewSidebarLogo, ViewNavItem, Text, Title, Icon, Link } from './styles';
-import { FiScissors, FiClipboard, FiSettings, FiMenu, FiLogOut } from 'react-icons/fi';
+import { FiScissors, FiHome, FiUser, FiBarChart2, FiLogOut, FiClipboard } from 'react-icons/fi';
 import { IconType } from 'react-icons';
 
 interface LinkItemProps {
@@ -21,9 +21,10 @@ interface LinkItemProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Agenda', icon: FiScissors, route: '/dashboard' },
-  { name: 'Cortes', icon: FiClipboard, route: '/haircuts' },
-  { name: 'Minha Conta', icon: FiSettings, route: '/profile' },
+  { name: 'Dashboard', icon: FiBarChart2, route: '/dashboard' },
+  { name: 'Início', icon: FiHome, route: '/' },
+  { name: 'Minha Conta', icon: FiUser, route: '/profile' },
+  { name: 'Cadastro', icon: FiClipboard, route: '/forms' },
   { name: 'Logout', icon: FiLogOut, route: '/login' },
 ];
 

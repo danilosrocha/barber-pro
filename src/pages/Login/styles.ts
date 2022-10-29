@@ -22,6 +22,8 @@ export const Logo = styled.img`
   width: 400px;
   border-radius: 20px;
   margin-bottom: 20px;
+  object-fit: cover;
+  aspect-ratio: 1;
 `;
 
 export const Input = styled.input`

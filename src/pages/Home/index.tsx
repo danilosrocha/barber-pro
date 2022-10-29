@@ -6,7 +6,7 @@ import Header from '../../components/Header/index';
 import light from '../../styles/themes/light';
 import dark from '../../styles/themes/dark';
 import { Sidebar } from '../../components/Sidebar';
-import { Flex } from '@chakra-ui/react';
+
 
 const Home: React.FC = () => {
   // const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light);
@@ -16,11 +16,12 @@ const Home: React.FC = () => {
   // };
   return (
     <Container>
+      {/* <Header toggleTheme={toggleTheme}/> */}
       <Sidebar>
       </Sidebar>
-        <View>
-          <Text>Bem vindo ao Home</Text>
-        </View>
+      <View>
+        <Text>Bem vindo ao Home</Text>
+      </View>
     </Container>
   );
 };

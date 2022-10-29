@@ -5,6 +5,7 @@ import Register from '../pages/Register';
 import Home from '../pages/Home';
 import Dashboard from '../pages/Dashboard';
 import Profile from '../pages/Profile';
+import Forms from '../pages/Forms';
 
 function RoutesApp() {
   return (
@@ -15,6 +16,7 @@ function RoutesApp() {
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/forms" element={<Forms />} />
       </Routes>
     </BrowserRouter>
   );

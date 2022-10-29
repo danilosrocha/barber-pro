@@ -9,7 +9,7 @@ export const Container = styled.section`
 
 export const View = styled.div`
   width: 640px;
-  background-color: red;
+  background: ${(props) => props.theme.colors.button.danger};;
   flex: 1;
   display: flex;
   align-items: center;
