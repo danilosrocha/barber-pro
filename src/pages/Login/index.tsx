@@ -1,34 +1,33 @@
-import logoImg from '../../../public/logo192.png';
-import { useNavigate } from 'react-router-dom';
-import { Container, View, Logo, Input, Button, Link, Text } from './styles';
+import { useState } from "react";
+import Login from "./login.layout";
+const LoginController = () => {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
-const Login: React.FC = () => {
+    function handleLogin() {
+        alert(" ----> Login ")
+        console.log(email);
+        console.log(password);
+    }
 
-  const navigate = useNavigate();
-  function goToHome() {
-    navigate("/")
-  }
+    const variables = {
+        email,
+        password,
+    }
 
-  return (
-    <Container>
-      <View>
-        <Logo
-          src={
-            'https://cdn.pixabay.com/photo/2016/09/12/05/41/van-gogh-1663090_960_720.jpg'
-          }
+    const handlers = {
+        handleLogin,
+        setEmail,
+        setPassword,
+    }
+
+    return (
+        <Login
+            handlers={handlers}
+            variables={variables}
         />
-        <Input placeholder="Digite seu e-mail" type="email" />
-        <Input placeholder="Digite sua senha" type="password" />
-        <Button onClick={goToHome}>Acessar</Button>
+    )
+}
 
-        <Link href="/register">
-          <Text>
-            Ainda não possui uma conta? <strong>Cadastre-se!</strong>
-          </Text>
-        </Link>
-      </View>
-    </Container>
-  );
-};
+export default LoginController
 
-export default Login;
