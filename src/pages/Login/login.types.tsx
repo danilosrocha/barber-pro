@@ -15,3 +15,14 @@ export type HandlersType = {
     setEmail: Dispatch<SetStateAction<string>>,
     setPassword: Dispatch<SetStateAction<string>>
 };
+
+export type LoginTextType = {
+    title: string,
+    email: string,
+    password: string,
+    buttonText: string,
+    linkText: string,
+    linkTextStrong: string
+};
+
+

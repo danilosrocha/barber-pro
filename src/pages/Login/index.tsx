@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { AuthContext } from "@/context/AuthContext/AuthContext";
+import { useState, useContext } from "react";
 import Login from "./login.layout";
+
+
 const LoginController = () => {
+    const { signIn } = useContext(AuthContext)
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    function handleLogin() {
+    async function handleLogin() {
         alert(" ----> Login ")
-        console.log(email);
-        console.log(password);
+        await signIn({ email, password })
     }
 
     const variables = {

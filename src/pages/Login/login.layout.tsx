@@ -4,13 +4,14 @@ import Image from 'next/image'
 import { Button, Center, Flex, Input, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 import { LayoutPropsType } from './login.types'
+import langLogin from '../register/register.language'
 
 const Login = ({ variables, handlers }: LayoutPropsType) => {
 
     return (
         <>
             <Head>
-                <title>BarberPRO - Faça login para acessar</title>
+                <title>{langLogin.title}</title>
             </Head>
             <Flex background="barber.900" height="100vh" alignItems="center" justifyContent="center">
                 <Flex width={640} direction={'column'} p={14} rounded={8}>
@@ -28,7 +29,7 @@ const Login = ({ variables, handlers }: LayoutPropsType) => {
                         background="barber.400"
                         variant="filled"
                         size="lg"
-                        placeholder='Digite seu email'
+                        placeholder={langLogin.email}
                         type="email"
                         mb={3}
                         color="white"
@@ -41,7 +42,7 @@ const Login = ({ variables, handlers }: LayoutPropsType) => {
                         background="barber.400"
                         variant="filled"
                         size="lg"
-                        placeholder='Digite sua senha'
+                        placeholder={langLogin.password}
                         type="password"
                         mb={6}
                         color="white"
@@ -58,7 +59,7 @@ const Login = ({ variables, handlers }: LayoutPropsType) => {
                         _hover={{ bg: "orange.700" }}
                         onClick={handlers?.handleLogin}
                     >
-                        Acessar
+                        {langLogin.buttonText}
                     </Button>
 
                     <Center mt={2}>
@@ -67,7 +68,7 @@ const Login = ({ variables, handlers }: LayoutPropsType) => {
                                 color="white"
                                 cursor="pointer"
                             >
-                                Ainda não possui conta? <strong>Cadastre-se</strong></Text>
+                                {langLogin.linkText}<strong>{langLogin.linkTextStrong}</strong></Text>
                         </Link>
                     </Center>
 

@@ -17,3 +17,13 @@ export type HandlersType = {
     setPassword: Dispatch<SetStateAction<string>>
     setNome: Dispatch<SetStateAction<string>>
 };
+
+export type RegisterTextType = {
+    nome: string,
+    title: string,
+    email: string,
+    password: string,
+    buttonText: string,
+    linkText: string,
+    linkTextStrong: string
+};

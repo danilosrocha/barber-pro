@@ -4,13 +4,14 @@ import Image from 'next/image'
 import { Button, Center, Flex, Input, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 import { LayoutPropsType } from './register.types'
+import textRegister from './register.language'
 
 const Register = ({ variables, handlers }: LayoutPropsType) => {
 
     return (
         <>
             <Head>
-                <title>BarberPRO - Cadastre sua conta</title>
+                <title>{textRegister.title}</title>
             </Head>
             <Flex background="barber.900" height="100vh" alignItems="center" justifyContent="center">
                 <Flex width={640} direction={'column'} p={14} rounded={8}>
@@ -28,7 +29,7 @@ const Register = ({ variables, handlers }: LayoutPropsType) => {
                         background="barber.400"
                         variant="filled"
                         size="lg"
-                        placeholder='Nome da barbearia'
+                        placeholder={textRegister.nome}
                         type="text"
                         mb={3}
                         color="white"
@@ -41,7 +42,7 @@ const Register = ({ variables, handlers }: LayoutPropsType) => {
                         background="barber.400"
                         variant="filled"
                         size="lg"
-                        placeholder='Digite seu email'
+                        placeholder={textRegister.email}
                         type="email"
                         mb={3}
                         color="white"
@@ -54,7 +55,7 @@ const Register = ({ variables, handlers }: LayoutPropsType) => {
                         background="barber.400"
                         variant="filled"
                         size="lg"
-                        placeholder='Digite sua senha'
+                        placeholder={textRegister.password}
                         type="password"
                         mb={6}
                         color="white"
@@ -71,7 +72,7 @@ const Register = ({ variables, handlers }: LayoutPropsType) => {
                         _hover={{ bg: "orange.700" }}
                         onClick={handlers?.handleRegister}
                     >
-                        Cadastrar
+                        {textRegister.buttonText}
                     </Button>
 
                     <Center mt={2}>
@@ -80,7 +81,7 @@ const Register = ({ variables, handlers }: LayoutPropsType) => {
                                 color="white"
                                 cursor="pointer"
                             >
-                                Já possui uma conta? <strong>Faça login</strong></Text>
+                                {textRegister.linkText}<strong>{textRegister.linkTextStrong}</strong></Text>
                         </Link>
                     </Center>
 
